@@ -1,0 +1,4 @@
+FROM golang:1.14
+WORKDIR /go/src/github.com/tokamak-software/traffic-stream/
+ADD poller .
+RUN GOOS=linux go build -a -o poller .

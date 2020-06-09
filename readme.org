@@ -16,9 +16,18 @@ who knows lol
 * Missing Features
   - Database
   - Search
+  - Long term archival to blob storage
   - Everything beyond the barebones
+
+
 
 * Demo
 TBD
 * License
 See LICENSE file.
+* Design Choices
+* Files & Details
+  - ~/nginx~ contains the relevant nginx configuration
+  - ~/site~ contains the html site to serve
+  - ~/poller~ contains the go code that scrapes the images
+  - ~/scripts~ contain a variety of scripts that manage ffmpeg

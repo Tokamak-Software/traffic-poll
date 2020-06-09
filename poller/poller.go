@@ -44,6 +44,7 @@ func getImage(camera, filePrefix string) error {
 	}
 	defer f.Close()
 	f.Write(body)
+	fmt.Println("Got frame")
 	return nil
 }
 

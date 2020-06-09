@@ -8,11 +8,16 @@ RUN apt-get update &&\
 # ADD poller /etc/poller
 # RUN (cd /etc/poller && go build .)
 COPY ./bin/traffic-poller traffic-poller
+COPY ./scraper/cameras.json cameras.json
+ADD scripts scripts
+
+RUN mkdir nginx
+RUN mkdir data
+RUN mkdir stream
 
 # Clone nginx rtmp module
 RUN git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git nginx-rtmp
 
-RUN mkdir nginx
 # Download nginx
 RUN wget http://nginx.org/download/nginx-1.18.0.tar.gz -O nginx-1.18.tar.gz && \
   tar -xf nginx-1.18.tar.gz
@@ -25,3 +30,6 @@ RUN rm -rf /root/nginx-1.18.0 && rm -rf /root/nginx-rtmp && rm /root/nginx-1.18.
 
 # Copy over the rtmp configuration
 COPY ./nginx/nginx.conf ./nginx-conf/nginx.conf
+
+EXPOSE 9090
+EXPOSE 1935

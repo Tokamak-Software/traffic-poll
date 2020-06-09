@@ -1,0 +1,24 @@
+* Webcam Poller
+A bunch of stuff that polls the [[https://webcams.nyctmc.org/multiview2.php][NYC Department of Transportation]] cameras once per second, and generates a seekable livestream from it.
+* Why?
+The NYC DOT traffic cameras are useful, but you can't seek backwards in time, making it difficult to see previous frames unless you've saved it.
+
+This repo contains a Docker image that glues together:
+- Go daemon that polls for images
+- ffmpeg RTSP stream
+- ffmpeg stream to m3u8's
+- nginx HLS server
+- absurdly barebones website that let's you pick the camera(s)
+
+* Usage
+who knows lol
+
+* Missing Features
+  - Database
+  - Search
+  - Everything beyond the barebones
+
+* Demo
+TBD
+* License
+See LICENSE file.

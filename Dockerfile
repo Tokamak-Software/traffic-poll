@@ -21,7 +21,7 @@ RUN (cd /root/nginx-1.18.0 && ./configure --conf-path=/root/nginx-conf/nginx.con
 # Build
 RUN (cd /root/nginx-1.18.0 && make -j64 && make install)
 # Clean up the nginx build
-RUN rm -rf /root/nginx-1.18.0 && rm -rf /root/nginx-rtmp && rm /root/nginx-1.18.0
+RUN rm -rf /root/nginx-1.18.0 && rm -rf /root/nginx-rtmp && rm /root/nginx-1.18.tar.gz
 
 # Copy over the rtmp configuration
 COPY ./nginx/nginx.conf ./nginx-conf/nginx.conf

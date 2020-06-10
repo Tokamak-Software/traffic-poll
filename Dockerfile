@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 WORKDIR root
 
 RUN apt-get update &&\
-  apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev git ffmpeg wget zlibc zlib1g zlib1g-dev
+  apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev git ffmpeg wget zlibc zlib1g zlib1g-dev vi
 
 # # Add the poller
 # ADD poller /etc/poller
